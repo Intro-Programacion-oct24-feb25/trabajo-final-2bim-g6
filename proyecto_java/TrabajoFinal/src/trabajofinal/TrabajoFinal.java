@@ -18,9 +18,11 @@ public class TrabajoFinal {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
+        int contadorActividades = 0;
+        int[] contadorActividades1 = null;
         boolean bandera = true;
-        int opcion;
-        String respuesta;
+        int opcion;;
+        int totalParticipantes;
 
         while (bandera) {
             System.out.println("\nMenú de Actividades:" + "\n1. Fútbol" + "\n2. Natación"
@@ -52,17 +54,22 @@ public class TrabajoFinal {
                     registrarParticipanteYoga();
                     break;
                 default:
-                    System.out.println("Opción no válida. Intente nuevamente.");
+                    System.out.println("lo sentimos, el club no tiene esa opción.\n");
             }
-            System.out.print("\n¿Deseas salir del programa? (s/n): ");
-            respuesta = entrada.nextLine();
-            if (bandera = false) {
+            if (opcion != 8) { // Solo preguntar si no eligió salir
+                System.out.print("¿Desea salor del ciclo? Coloque(s) si desea salir del ciclo ");
+                String respuesta = entrada.nextLine();
+                if (respuesta.equalsIgnoreCase("s")) {
+                    bandera = false;
+                }
             }
-        }
 
+        }
+        obtenerInformacion(contadorActividades1);
+        obtenerReporte(contadorActividades);
     }
 
-    public static String registrarParticipanteFutbol() {
+    public static void registrarParticipanteFutbol() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -74,6 +81,7 @@ public class TrabajoFinal {
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Posicion preferidad:");
         posicion = entrada.nextLine();
         System.out.println("Ciudad:");
@@ -84,11 +92,10 @@ public class TrabajoFinal {
         mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, posicion, ciudad, equipo);
 
-        return mensaje;
-
+        System.out.println(mensaje);
     }
 
-    public static String registrarParticipanteNatacion() {
+    public static void registrarParticipanteNatacion() {
 
         Scanner entrada = new Scanner(System.in);
         String nombre;
@@ -101,6 +108,7 @@ public class TrabajoFinal {
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Nivel (principiante, intermedio, avanzado):");
         nivel = entrada.nextLine();
         System.out.println("Ciudad:");
@@ -108,65 +116,67 @@ public class TrabajoFinal {
         System.out.println("Estilo favorito:");
         estilo = entrada.nextLine();
 
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
+        mensaje = String.format("Natacion - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, nivel, ciudad, estilo);
 
-        return mensaje;
+        System.out.println(mensaje);
 
     }
 
-    public static String registrarParticipanteAtletismo() {
+    public static void registrarParticipanteAtletismo() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
         String especialidad;
         String ciudad;
-        String record;
+        int record;
         String mensaje;
         System.out.println("Nombre del participante:");
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Especialidad (carreras, salto, lanzamiento):");
         especialidad = entrada.nextLine();
         System.out.println("Ciudad:");
         ciudad = entrada.nextLine();
         System.out.println("Record personal:");
-        record = entrada.nextLine();
+        record = entrada.nextInt();
 
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
+        mensaje = String.format("Atletismo - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, especialidad, ciudad, record);
 
-        return mensaje;
+        System.out.println(mensaje);
 
     }
 
-    public static String registrarParticipanteBasquetbol() {
+    public static void registrarParticipanteBasquetbol() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
         String posicion;
         String ciudad;
-        String estatura;
+        double estatura;
         String mensaje;
         System.out.println("Nombre del participante:");
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Posicion preferidad:");
         posicion = entrada.nextLine();
         System.out.println("Ciudad:");
         ciudad = entrada.nextLine();
         System.out.println("Estatura:");
-        estatura = entrada.nextLine();
+        estatura = entrada.nextDouble();
 
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
+        mensaje = String.format("Basquetbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, posicion, ciudad, estatura);
 
-        return mensaje;
+        System.out.println(mensaje);
     }
 
-    public static String registrarParticipanteCiclismo() {
+    public static void registrarParticipanteCiclismo() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -178,6 +188,7 @@ public class TrabajoFinal {
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Tipo de ciclismo (montaña, ruta, urbano):");
         tipo = entrada.nextLine();
         System.out.println("Ciudad:");
@@ -185,13 +196,13 @@ public class TrabajoFinal {
         System.out.println("Marca de bicicleta favorita:");
         marca = entrada.nextLine();
 
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
+        mensaje = String.format("Ciclismo - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, tipo, ciudad, marca);
 
-        return mensaje;
+        System.out.println(mensaje);
     }
 
-    public static String registrarParticipanteTenis() {
+    public static void registrarParticipanteTenis() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -203,6 +214,7 @@ public class TrabajoFinal {
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Nivel (principiante, intermedio, avanzado):");
         nivel = entrada.nextLine();
         System.out.println("Ciudad:");
@@ -210,14 +222,14 @@ public class TrabajoFinal {
         System.out.println("Mano hábil (derecha/izquierda):");
         mano = entrada.nextLine();
 
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
+        mensaje = String.format("Tenis - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, nivel, ciudad, mano);
 
-        return mensaje;
+        System.out.println(mensaje);
 
     }
 
-    public static String registrarParticipanteYoga() {
+    public static void registrarParticipanteYoga() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -229,6 +241,7 @@ public class TrabajoFinal {
         nombre = entrada.nextLine();
         System.out.println("Edad:");
         edad = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Nivel (principiante, intermedio, avanzado):");
         nivel = entrada.nextLine();
         System.out.println("Ciudad:");
@@ -236,14 +249,29 @@ public class TrabajoFinal {
         System.out.println("Estilo de yoga preferido:");
         estilo = entrada.nextLine();
 
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
+        mensaje = String.format("Yoga - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
                 nombre, edad, nivel, ciudad, estilo);
 
-        return mensaje;
+        System.out.println(mensaje);
 
     }
 
-    public static String obtenerInformacion(int total) {
+    public static int obtenerInformacion(int[] contadorActividades) {
+
+        String[] deporte = {"Fútbol", "Natación", "Atletismo", "Básquetbol", "Ciclismo", "Tenis", "Yoga"};
+        int totalParticipantes = 0;
+
+        System.out.println("\nResumen Final:");
+        for (int i = 0; i < contadorActividades.length; i++) {
+            System.out.printf("%s: %d participantes\n", deporte[i], contadorActividades[i]);
+            totalParticipantes = totalParticipantes + contadorActividades[i];
+
+        }
+        return totalParticipantes;
+    }
+
+    public static void obtenerReporte(int total) {
+        System.out.println("\nReporte de Participación:");
         if (total == 0) {
             System.out.println("Mala campaña, debemos mejorar.");
         } else if (total <= 5) {
@@ -253,6 +281,6 @@ public class TrabajoFinal {
         } else {
             System.out.println("Excelente campaña del club.");
         }
-        return null;
+
     }
 }
