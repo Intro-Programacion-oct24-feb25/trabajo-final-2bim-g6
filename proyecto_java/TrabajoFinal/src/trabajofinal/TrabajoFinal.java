@@ -74,7 +74,7 @@ public class trabajoFinal {
                     bandera = false;
             }
 
-            System.out.println("¿Desea continuar agregando actividades? Ingrese si o no");
+            System.out.println("Desea continuar agregando actividades? Ingrese si o no");
             entrada.nextLine();
             String continuar = entrada.nextLine();
             if (continuar.equalsIgnoreCase("no")) {
