@@ -5,53 +5,72 @@
 package trabajofinal;
 
 import java.util.Scanner;
+import funcion01.funcion01;
+import static funcion01.funcion01.funcion01;
+import funcion02.funcion02;
+import static funcion02.funcion02.funcion02;
+import funcion03.funcion03;
+import static funcion03.funcion03.funcion03;
+import funcion04.funcion04;
+import static funcion04.funcion04.funcion04;
+import funcion06.funcion06;
+import static funcion05.funcion05.funcion05;
+import static funcion06.funcion06.funcion06;
+import funcion07.funcion07;
+import static funcion07.funcion07.funcion07;
 
 /**
  *
- * @author utpl
+ * @author USUARIO
  */
 public class TrabajoFinal {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
         Scanner entrada = new Scanner(System.in);
         int contadorActividades = 0;
         int[] contadorActividades1 = new int[7];
+        String[] deporte = {"Futbol",
+            "Natacion", "Atletismo", "Basquetbol", "Ciclismo", "Tenis", "Yoga"};
+        int[] resultados = new int[7];
+        int opcion;
         boolean bandera = true;
-        int opcion;;
-        int totalParticipantes;
 
         while (bandera) {
-            System.out.println("\nMenú de Actividades:" + "\n1. Fútbol" + "\n2. Natación"
-                    + "\n3. Atletismo" + "\n4. Básquetbol" + "\n5. Ciclismo" + "\n6. Tenis"
-                    + "\n7. Yoga");
-            System.out.println("Seleccione una opcion: ");
+            System.out.println("Ingrese la diciplina  a la que quiere ingresar: ");
+            for (int i = 0; i < deporte.length; i++) {
+                System.out.println((i + 1) + "." + deporte[i] + "(" + (i + 1) + ")");
+            }
             opcion = entrada.nextInt();
 
             switch (opcion) {
                 case 1:
-                    registrarParticipanteFutbol();
+                    funcion01();
+                    resultados[0]++;
                     break;
                 case 2:
-                    registrarParticipanteNatacion();
+                    funcion02();
+                    resultados[1]++;
                     break;
                 case 3:
-                    registrarParticipanteAtletismo();
+                    funcion03();
+                    resultados[2]++;
                     break;
                 case 4:
-                    registrarParticipanteBasquetbol();
+                    funcion05();
+                    resultados[3]++;
                     break;
                 case 5:
-                    registrarParticipanteCiclismo();
+                    funcion04();
+                    resultados[4]++;
                     break;
                 case 6:
-                    registrarParticipanteTenis();
+                    funcion06();
+                    resultados[5]++;
                     break;
                 case 7:
-                    registrarParticipanteYoga();
+                    funcion07();
+                    resultados[6]++;
                     break;
                 default:
                     System.out.println("lo sentimos, el club no tiene esa opción.\n");
@@ -61,225 +80,17 @@ public class TrabajoFinal {
             String respuesta = entrada.nextLine();
             if (respuesta.equalsIgnoreCase("s")) {
                 bandera = false;
+
+                System.out.println("Lo sentimos, el club no tiene esta opción");
+                bandera = false;
             }
 
+            System.out.println("¿Desea continuar agregando actividades? Ingrese si o no");
+            entrada.nextLine();
+            String continuar = entrada.nextLine();
+            if (continuar.equalsIgnoreCase("no")) {
+                bandera = false;
+            }
         }
-        obtenerInformacion(contadorActividades1);
-        obtenerReporte(contadorActividades);
-    }
-
-    public static void registrarParticipanteFutbol() {
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String posicion;
-        String ciudad;
-        String equipo;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Posicion preferidad:");
-        posicion = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Equipo favorito:");
-        equipo = entrada.nextLine();
-
-        mensaje = String.format("Futbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, posicion, ciudad, equipo);
-
-        System.out.println(mensaje);
-    }
-
-    public static void registrarParticipanteNatacion() {
-
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String nivel;
-        String ciudad;
-        String estilo;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Nivel (principiante, intermedio, avanzado):");
-        nivel = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Estilo favorito:");
-        estilo = entrada.nextLine();
-
-        mensaje = String.format("Natacion - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, nivel, ciudad, estilo);
-
-        System.out.println(mensaje);
-
-    }
-
-    public static void registrarParticipanteAtletismo() {
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String especialidad;
-        String ciudad;
-        int record;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Especialidad (carreras, salto, lanzamiento):");
-        especialidad = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Record personal:");
-        record = entrada.nextInt();
-
-        mensaje = String.format("Atletismo - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, especialidad, ciudad, record);
-
-        System.out.println(mensaje);
-
-    }
-
-    public static void registrarParticipanteBasquetbol() {
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String posicion;
-        String ciudad;
-        double estatura;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Posicion preferidad:");
-        posicion = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Estatura:");
-        estatura = entrada.nextDouble();
-
-        mensaje = String.format("Basquetbol - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, posicion, ciudad, estatura);
-
-        System.out.println(mensaje);
-    }
-
-    public static void registrarParticipanteCiclismo() {
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String tipo;
-        String ciudad;
-        String marca;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Tipo de ciclismo (montaña, ruta, urbano):");
-        tipo = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Marca de bicicleta favorita:");
-        marca = entrada.nextLine();
-
-        mensaje = String.format("Ciclismo - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, tipo, ciudad, marca);
-
-        System.out.println(mensaje);
-    }
-
-    public static void registrarParticipanteTenis() {
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String nivel;
-        String ciudad;
-        String mano;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Nivel (principiante, intermedio, avanzado):");
-        nivel = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Mano hábil (derecha/izquierda):");
-        mano = entrada.nextLine();
-
-        mensaje = String.format("Tenis - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, nivel, ciudad, mano);
-
-        System.out.println(mensaje);
-
-    }
-
-    public static void registrarParticipanteYoga() {
-        Scanner entrada = new Scanner(System.in);
-        String nombre;
-        int edad;
-        String nivel;
-        String ciudad;
-        String estilo;
-        String mensaje;
-        System.out.println("Nombre del participante:");
-        nombre = entrada.nextLine();
-        System.out.println("Edad:");
-        edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Nivel (principiante, intermedio, avanzado):");
-        nivel = entrada.nextLine();
-        System.out.println("Ciudad:");
-        ciudad = entrada.nextLine();
-        System.out.println("Estilo de yoga preferido:");
-        estilo = entrada.nextLine();
-
-        mensaje = String.format("Yoga - Nombre:\n%sEdad: %d, Posición: %s, Ciudad: %s, Equipo: %s",
-                nombre, edad, nivel, ciudad, estilo);
-
-        System.out.println(mensaje);
-
-    }
-
-    public static int obtenerInformacion(int[] contadorActividades) {
-
-        String[] deporte = {"Fútbol", "Natación", "Atletismo", "Básquetbol", "Ciclismo", "Tenis", "Yoga"};
-        int totalParticipantes = 0;
-
-        System.out.println("\nResumen Final:");
-        for (int i = 0; i < contadorActividades.length; i++) {
-            System.out.printf("%s: %d participantes\n", deporte[i], contadorActividades[i]);
-            totalParticipantes = totalParticipantes + contadorActividades[i];
-
-        }
-        return totalParticipantes;
-    }
-
-    public static void obtenerReporte(int total) {
-        System.out.println("\nReporte de Participación:");
-        if (total == 0) {
-            System.out.println("Mala campaña, debemos mejorar.");
-        } else if (total <= 5) {
-            System.out.println("Poca participación en el club, hay que mejorar.");
-        } else if (total <= 15) {
-            System.out.println("Buena participación, sigan así.");
-        } else {
-            System.out.println("Excelente campaña del club.");
-        }
-
     }
 }
