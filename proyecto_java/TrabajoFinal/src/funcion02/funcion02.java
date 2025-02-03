@@ -7,8 +7,7 @@ package funcion02;
 import java.util.Scanner;
 
 public class funcion02 {
-
-     public static void funcion02(){
+    public static void funcion02() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -27,10 +26,10 @@ public class funcion02 {
         estilo = entrada.nextLine();
         System.out.println("Ingrese el nivel del participante (Principiante, Intermedio, Avanzado): ");
         nivel = entrada.nextLine();
-        System.out.printf("Datos\nNombre: %s\nEdad: %d\nCiudad: %s\nEstilo: %s\nNivel: %s\n",
-                nombre, edad, ciudad, estilo, nivel);
+        
+       
+        System.out.printf("Resumen: Nombre: %s, Edad: %d, Ciudad: %s, Estilo: %s, Nivel: %s\n", nombre, edad, ciudad, estilo, nivel);
     }
 }
-
 
 

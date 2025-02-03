@@ -1,0 +1,125 @@
+
+
+def obtener_informacion(total):
+    if total == 0:
+        print("Mala campaña, debemos mejorar")
+    elif total <= 5:
+        print("Poca participación en el club, hay que mejorar")
+    elif total <= 15:
+        print("Buena participación, sigan así.")
+    else:
+        print("Excelente campaña del club.")
+
+def obtener_reporte(areas, resultados):
+    print("Las actividades ingresadas son:")
+    for i in range(len(areas)):
+        print(f"{i + 1}. Número de Participantes de {areas[i]}: {resultados[i]}")
+
+def funcion01():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    posicion = input("Ingrese la posición preferida del participante: ")
+    ciudad = input("Ingrese la ciudad del participante: ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Posición: {posicion}, Ciudad: {ciudad}")
+
+def funcion02():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    ciudad = input("Ingrese la ciudad del participante: ")
+    estilo = input("Ingrese el estilo favorito del participante: ")
+    nivel = input("Ingrese el nivel del participante (Principiante, Intermedio, Avanzado): ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Ciudad: {ciudad}, Estilo: {estilo}, Nivel: {nivel}")
+
+def funcion03():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    especialidad = input("Ingrese la especialidad del participante (Carreras, Salto, Lanzamiento): ")
+    ciudad = input("Ingrese la ciudad del participante: ")
+    record_personal = input("Ingrese el record personal del participante: ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Especialidad: {especialidad}, Ciudad: {ciudad}, Record Personal: {record_personal}")
+
+def funcion04():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    posicion = input("Ingrese la posición preferida del participante: ")
+    estatura = float(input("Ingrese la estatura del participante: "))
+    ciudad = input("Ingrese la ciudad del participante: ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Posición: {posicion}, Estatura: {estatura}, Ciudad: {ciudad}")
+
+def funcion05():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    tipo_de_ciclismo = input("Ingrese el tipo de ciclismo del participante (Montaña, Ruta, Urbano): ")
+    ciudad = input("Ingrese la ciudad del participante: ")
+    marca_de_bicicleta = input("Ingrese la marca de bicicleta preferida del participante: ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Tipo de Ciclismo: {tipo_de_ciclismo}, Ciudad: {ciudad}, Marca: {marca_de_bicicleta}")
+
+def funcion06():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    nivel = input("Ingrese el nivel del participante (Principiante, Intermedio, Avanzado): ")
+    ciudad = input("Ingrese la ciudad del participante: ")
+    mano_habil = input("Ingrese la mano habil del participante: ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Nivel: {nivel}, Ciudad: {ciudad}, Mano: {mano_habil}")
+
+def funcion07():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+    tipo_de_yoga = input("Ingrese el tipo de yoga que practica el participante: ")
+    ciudad = input("Ingrese la ciudad del participante: ")
+    print(f"Resumen: Nombre: {nombre}, Edad: {edad}, Tipo de Yoga: {tipo_de_yoga}, Ciudad: {ciudad}")
+
+def main():
+    areas = ["Futbol", "Natacion", "Atletismo", "Basquetbol", "Ciclismo", "Tenis", "Yoga"]
+    resultados = [0] * 7
+    total_actividades = 0
+    bandera = True
+
+    while bandera:
+        print("Ingrese la disciplina a la que quiere ingresar: ")
+        for i in range(len(areas)):
+            print(f"{i + 1}. {areas[i]}")
+        
+        opcion = int(input())
+        
+        if opcion == 1:
+            funcion01()
+            resultados[0] += 1
+            total_actividades += 1
+        elif opcion == 2:
+            funcion02()
+            resultados[1] += 1
+            total_actividades += 1
+        elif opcion == 3:
+            funcion03()
+            resultados[2] += 1
+            total_actividades += 1
+        elif opcion == 4:
+            funcion04()
+            resultados[3] += 1
+            total_actividades += 1
+        elif opcion == 5:
+            funcion05()
+            resultados[4] += 1
+            total_actividades += 1
+        elif opcion == 6:
+            funcion06()
+            resultados[5] += 1
+            total_actividades += 1
+        elif opcion == 7:
+            funcion07()
+            resultados[6] += 1
+            total_actividades += 1
+        else:
+            print("Lo sentimos, el club no tiene esta opción.")
+            bandera = False
+
+        continuar = input("¿Desea continuar agregando actividades? Ingrese 'si' o 'no': ")
+        if continuar.lower() == 'no':
+            bandera = False
+
+    obtener_informacion(total_actividades)
+    obtener_reporte(areas, resultados)
+
+if __name__ == "__main__":
+    main()
