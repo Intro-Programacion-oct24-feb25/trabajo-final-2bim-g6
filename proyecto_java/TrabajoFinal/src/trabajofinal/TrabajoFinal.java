@@ -19,7 +19,7 @@ public class TrabajoFinal {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         int contadorActividades = 0;
-        int[] contadorActividades1 = null;
+        int[] contadorActividades1 = new int[7];
         boolean bandera = true;
         int opcion;;
         int totalParticipantes;
@@ -56,12 +56,11 @@ public class TrabajoFinal {
                 default:
                     System.out.println("lo sentimos, el club no tiene esa opción.\n");
             }
-            if (opcion != 8) { // Solo preguntar si no eligió salir
-                System.out.print("¿Desea salor del ciclo? Coloque(s) si desea salir del ciclo ");
-                String respuesta = entrada.nextLine();
-                if (respuesta.equalsIgnoreCase("s")) {
-                    bandera = false;
-                }
+
+            System.out.print("¿Desea salor del ciclo? Coloque(s) si desea salir del ciclo ");
+            String respuesta = entrada.nextLine();
+            if (respuesta.equalsIgnoreCase("s")) {
+                bandera = false;
             }
 
         }
