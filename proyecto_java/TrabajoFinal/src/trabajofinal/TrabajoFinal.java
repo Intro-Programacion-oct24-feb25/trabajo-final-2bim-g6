@@ -29,7 +29,7 @@ public class trabajoFinal {
                 System.out.println((i + 1) + "." + areas[i]);
             }
             int opcion = entrada.nextInt();
-            entrada.nextLine(); // Limpiar el buffer
+            entrada.nextLine(); 
 
             switch (opcion) {
                 case 1:
@@ -83,7 +83,7 @@ public class trabajoFinal {
         obtenerReporte(areas, resultados);
     }
 
-    // Función que obtiene la información sobre la participación
+   
     public static void obtenerInformacion(int total) {
         if (total == 0) {
             System.out.println("Mala campaña, debemos mejorar");
@@ -96,7 +96,6 @@ public class trabajoFinal {
         }
     }
 
-    // Función que genera el reporte de actividades
     public static void obtenerReporte(String[] areas, int[] resultados) {
         System.out.println("Las actividades ingresadas son:");
         for (int i = 0; i < areas.length; i++) {
