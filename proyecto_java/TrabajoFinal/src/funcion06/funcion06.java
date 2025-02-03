@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @author USUARIO
  */
 public class funcion06 {
+
     public static void funcion06() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
@@ -23,18 +24,15 @@ public class funcion06 {
         nombre = entrada.nextLine();
         System.out.println("Ingrese la edad del participante: ");
         edad = entrada.nextInt();
-        entrada.nextLine(); 
+        entrada.nextLine();
         System.out.println("Ingrese el nivel del participante (Principiante, Intermedio, Avanzado): ");
         nivel = entrada.nextLine();
         System.out.println("Ingrese la ciudad del participante: ");
         ciudad = entrada.nextLine();
-        System.out.println("Ingrese la mano hábil del participante: ");
+        System.out.println("Ingrese la mano habil del participante: ");
         manoHabil = entrada.nextLine();
-        System.out.printf("Datos\nNombre: %s\nEdad: %d\nNivel: %s\nCiudad: %s\nMano: %s\n",
+
+        System.out.printf("Resumen: Nombre: %s, Edad: %d, Nivel: %s, Ciudad: %s, Mano: %s\n",
                 nombre, edad, nivel, ciudad, manoHabil);
     }
 }
-
-
-        
-    

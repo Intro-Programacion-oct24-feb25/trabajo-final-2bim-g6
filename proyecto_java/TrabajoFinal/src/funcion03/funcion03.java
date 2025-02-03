@@ -4,16 +4,15 @@
  */
 package funcion03;
 
-import java.util.Scanner;
-
-
 
 /**
  *
  * @author utpl
  */
+import java.util.Scanner;
+
 public class funcion03 {
-     public static void funcion03() {
+    public static void funcion03() {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -32,12 +31,11 @@ public class funcion03 {
         ciudad = entrada.nextLine();
         System.out.println("Ingrese el record personal del participante: ");
         recordPersonal = entrada.nextLine();
-        System.out.printf("Datos\nNombre: %s\nEdad: %d\nEspecialidad: %s\nCiudad: %s\nRecord personal: %s\n",
-                nombre, edad, especialidad, ciudad, recordPersonal);
+        
+       
+        System.out.printf("Resumen: Nombre: %s, Edad: %d, Especialidad: %s, Ciudad: %s, Record Personal: %s\n", 
+                          nombre, edad, especialidad, ciudad, recordPersonal);
     }
 }
-
-
-       
 
     
