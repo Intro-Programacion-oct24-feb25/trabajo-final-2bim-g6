@@ -12,7 +12,7 @@ package funcion03;
 import java.util.Scanner;
 
 public class funcion03 {
-    public static void funcion03() {
+    public static String  funcion03(String cadena) {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -33,9 +33,19 @@ public class funcion03 {
         recordPersonal = entrada.nextLine();
         
        
-        System.out.printf("Resumen: Nombre: %s, Edad: %d, Especialidad: %s, Ciudad: %s, Record Personal: %s\n", 
-                          nombre, edad, especialidad, ciudad, recordPersonal);
+       cadena = String.format("""
+                          %sDeporte: Natacion
+                          Resumen: 
+                          Nombre: %s
+                          Edad: %d
+                          Ciudad: %s
+                          Especialidad: %s
+                          Record Personal:%s 
+                          """, cadena, nombre, edad, ciudad, especialidad, recordPersonal);
+        return cadena;
+
     }
 }
 
+    
     
