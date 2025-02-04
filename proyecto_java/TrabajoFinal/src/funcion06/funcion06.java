@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class funcion06 {
 
-    public static void funcion06() {
+    public static String  funcion06(String cadena) {
         Scanner entrada = new Scanner(System.in);
         String nombre;
         int edad;
@@ -32,7 +32,16 @@ public class funcion06 {
         System.out.println("Ingrese la mano habil del participante: ");
         manoHabil = entrada.nextLine();
 
-        System.out.printf("Resumen: Nombre: %s, Edad: %d, Nivel: %s, Ciudad: %s, Mano: %s\n",
-                nombre, edad, nivel, ciudad, manoHabil);
+       cadena = String.format("""
+                          %sDeporte: Natacion
+                          Resumen: 
+                          Nombre: %s
+                          Edad: %d
+                          Ciudad: %s
+                          Estilo: %s
+                          Nivel:%s 
+                          """, cadena, nombre, edad, nivel, ciudad, manoHabil );
+        return cadena;
+
     }
 }
